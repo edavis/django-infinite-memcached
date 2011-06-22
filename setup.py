@@ -10,4 +10,10 @@ setup(
     license="BSD",
     description="Tell memcached to never expire items in Django",
     long_description=open('README.rst').read(),
+    classifiers = [
+        "Framework :: Django",
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: BSD License",
+    ],
 )
