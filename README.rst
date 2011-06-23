@@ -8,7 +8,7 @@ Enables the use of ``timeout=0`` when using memcached in Django.
 Installation
 -------------
 
-1) ``pip install django-infinite-memcached``
+1) ``pip install -e git+http://github.com/edavis/django-infinite-memcached.git#egg=django-infinite-memcached``
 
 2) Set ``infinite_memcached.MemcachedCache`` as the ``BACKEND`` in ``CACHES``
 
