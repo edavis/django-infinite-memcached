@@ -1,0 +1,3 @@
+# deps needed to run infinite_memcached's tests
+Django==1.4.2
+python-memcached==1.48
