@@ -1,5 +1,4 @@
 import time
-import memcache
 from django.test import TestCase
 from infinite_memcached.cache import MemcachedCache
 
