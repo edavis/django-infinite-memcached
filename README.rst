@@ -32,3 +32,8 @@ This has been an `known issue
 <https://code.djangoproject.com/ticket/9595>`_ for awhile, but
 concerns over backwards compatibility have prevented any fixes from
 taking place.
+
+License
+-------
+
+BSD
