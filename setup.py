@@ -8,7 +8,7 @@ setup(
     packages=["infinite_memcached"],
     url="http://github.com/edavis/django-infinite-memcached/",
     license="BSD",
-    description="Tell memcached to never expire items in Django",
+    description="A Django memcached backend to handle 'infinite' timeouts",
     long_description=open('README.rst').read(),
     classifiers = [
         "Framework :: Django",
