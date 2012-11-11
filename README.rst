@@ -24,8 +24,8 @@ Why is this needed?
 Django's default memcached backend doesn't accept timeout values of
 zero, instead using the default timeout (five minutes) when zero is passed.
 
-This cache backend overrides how timeouts are calculated and any
-timeout of zero is passed directly to memcached, which tells it to
+This cache backend overrides how timeouts are calculated so any
+timeout of zero is passed directly to memcached, telling memcached to
 never expire an item.
 
 This has been an `known issue
