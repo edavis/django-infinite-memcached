@@ -124,7 +124,7 @@ INSTALLED_APPS = (
 
 CACHES = {
     "default": {
-        "BACKEND": "infinite_memcached.MemcachedCache",
+        "BACKEND": "infinite_memcached.cache.MemcachedCache",
         "HOST": "127.0.0.1:11211",
     },
 }
