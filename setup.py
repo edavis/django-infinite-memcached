@@ -12,7 +12,7 @@ setup(
     long_description=open('README.rst').read(),
     classifiers = [
         "Framework :: Django",
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
     ],
