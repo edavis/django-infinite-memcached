@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="django-infinite-memcached",
-    version="0.1-dev",
+    version="0.1",
     author="Eric Davis",
     author_email="ed@npri.org",
     packages=["infinite_memcached"],
