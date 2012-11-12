@@ -22,9 +22,7 @@ $ . django-infinite-memcached/bin/activate
 3) Install infinite_memcached and run the test suite:
 
 ```shell
-$ cd /vagrant
-$ pip install -e .
-$ cd test_project/
+$ cd /vagrant/test_project
 $ pip install -r requirements.txt
 $ ./manage.py test infinite_memcached
 ```
