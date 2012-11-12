@@ -1,42 +1,56 @@
 django-infinite-memcached
 =========================
 
-A cache backend to better work with "infinite" timeouts in memcached.
-
-Enables the use of ``timeout=0`` when using memcached in Django.
+A Django memcached backend to handle "infinite" timeouts (i.e., never
+expire an item).
 
 Installation
 -------------
 
-1) ``pip install django-infinite-memcached``
+1) ``$ pip install django-infinite-memcached``
 
-2) Set ``infinite_memcached.MemcachedCache`` as the ``BACKEND`` in ``CACHES``
-
-For example::
+2) Set ``infinite_memcached.cache.MemcachedCache`` as your cache backend::
 
     CACHES = {
         "default": {
-            "BACKEND": "infinite_memcached.MemcachedCache",
+            "BACKEND": "infinite_memcached.cache.MemcachedCache",
             "LOCATION": "127.0.0.1:11211",
         },
     }
 
-This cache backend only overrides how timeouts are calculated, so
-existing code should continue to work.  You'll just now be able to use
-``timeout=0`` with ``cache.add``, ``cache.set``, and ``cache.set_many``.
+How to use
+----------
 
-Versions
---------
+Either set the ``TIMEOUT`` option to 0::
 
-Tested with:
+    CACHES = {
+        "default": {
+            "BACKEND": "infinite_memcached.cache.MemcachedCache",
+            "LOCATION": "127.0.0.1:11211",
+            "TIMEOUT": 0,
+        },
+    }
 
-- Django 1.3
-- python-memcached 1.47
-- memcached 1.4.5
+Or pass ``timeout=0`` to the `low-level cache commands
+<https://docs.djangoproject.com/en/1.4/topics/cache/#the-low-level-cache-api>`_
+(e.g., set, add, etc.) to keep things from expiring.
 
-TODO
+Why?
 ----
 
-- Add unittests
-- Add support for pylibmc
-- Contributions welcome
+Django's default memcached backend doesn't accept timeout values of
+zero, instead using the default timeout (five minutes) when zero is passed.
+
+This cache backend overrides how timeouts are calculated so any
+timeout of zero is passed directly to memcached, telling memcached to
+never expire an item.
+
+This has been an `known issue
+<https://code.djangoproject.com/ticket/9595>`_ for awhile, but
+concerns over backwards compatibility have prevented any fixes from
+taking place.
+
+License
+-------
+
+BSD. See LICENSE.txt.
