@@ -7,7 +7,7 @@ expire an item).
 Installation
 -------------
 
-1) ``pip install django-infinite-memcached``
+1) ``$ pip install django-infinite-memcached``
 
 2) Set ``infinite_memcached.cache.MemcachedCache`` as your cache backend::
 
@@ -18,8 +18,25 @@ Installation
         },
     }
 
-Why is this needed?
--------------------
+How to use
+----------
+
+Either set the ``TIMEOUT`` option to 0::
+
+    CACHES = {
+        "default": {
+            "BACKEND": "infinite_memcached.cache.MemcachedCache",
+            "LOCATION": "127.0.0.1:11211",
+            "TIMEOUT": 0,
+        },
+    }
+
+Or pass ``timeout=0`` to the `low-level cache commands
+<https://docs.djangoproject.com/en/1.4/topics/cache/#the-low-level-cache-api>`_
+(e.g., set, add, etc.) to keep things from expiring.
+
+Why?
+----
 
 Django's default memcached backend doesn't accept timeout values of
 zero, instead using the default timeout (five minutes) when zero is passed.
@@ -36,4 +53,4 @@ taking place.
 License
 -------
 
-BSD
+BSD. See LICENSE.txt.
