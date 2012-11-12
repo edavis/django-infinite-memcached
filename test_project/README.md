@@ -15,7 +15,7 @@ $ vagrant provision
 ```shell
 $ vagrant ssh
 $ # now you're inside your Vagrant virtual machine
-$ virtualenv --distribute django-infinite-memcached
+$ virtualenv django-infinite-memcached
 $ . django-infinite-memcached/bin/activate
 ```
 
