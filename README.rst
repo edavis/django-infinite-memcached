@@ -50,6 +50,14 @@ This has been an `known issue
 concerns over backwards compatibility have prevented any fixes from
 taking place.
 
+Tests
+-----
+
+The README in test_project/ has instructions on running the test suite.
+
+.. image:: https://secure.travis-ci.org/edavis/django-infinite-memcached.png
+   :target: https://travis-ci.org/edavis/django-infinite-memcached
+
 License
 -------
 
