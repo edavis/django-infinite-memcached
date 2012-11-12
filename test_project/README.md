@@ -1,6 +1,6 @@
 Here's how to get the test suite up and running:
 
-(note: you'll need [Vagrant](http://vagrantup.com/) for all this)
+(note: you'll need [Vagrant](http://vagrantup.com/) for this)
 
 1) Set up your Vagrant box:
 
