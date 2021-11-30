@@ -1,3 +1,7 @@
+**UPDATE (November 30, 2021):** You probably don't need to use this. Django now officially supports `cache keys that never expire <https://docs.djangoproject.com/en/3.2/topics/cache/#cache-arguments>`_.
+
+----
+
 django-infinite-memcached
 =========================
 
